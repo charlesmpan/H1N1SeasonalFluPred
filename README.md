@@ -25,54 +25,98 @@ This project used three datasets from the website that this was a competition fo
 The following is the data itself and what it conveys; most of the multicollinearity was between the opinion section.
 
  0   h1n1_concern                 26615 non-null  float64 - A rating of how concerned someone was of H1N1
+ 
  1   h1n1_knowledge               26591 non-null  float64 - A rating of how knowledgable someone was of H1N1
+ 
  2   behavioral_antiviral_meds    26636 non-null  float64 - Whether a person used antiviral meds
+ 
  3   behavioral_avoidance         26499 non-null  float64 - Whether a person practiced avoidance
+ 
  4   behavioral_face_mask         26688 non-null  float64 - Whether a person wore a face mask
+ 
  5   behavioral_wash_hands        26665 non-null  float64 - Whether a person actively washed their hands
+ 
  6   behavioral_large_gatherings  26620 non-null  float64 - Whether a person attended large gatherings
+ 
  7   behavioral_outside_home      26625 non-null  float64 - Whether a person goes outside regularly
+ 
  8   behavioral_touch_face        26579 non-null  float64 - Whether a person touches their face regularly
+ 
  9   doctor_recc_h1n1             24547 non-null  float64 - Whether a person was recommended H1N1 vaccination by their doctor
+ 
  10  doctor_recc_seasonal         24547 non-null  float64 - Whether a person was recommended seasonal vaccination by their doctor
+ 
  11  chronic_med_condition        25736 non-null  float64 - If they have a chronic medical condition
+ 
  12  child_under_6_months         25887 non-null  float64 - If they have a child under 6 months old
+ 
  13  health_worker                25903 non-null  float64 - If the person is a health worker
+ 
  14  health_insurance             14433 non-null  float64 - If the person has health insurance
+ 
  15  opinion_h1n1_vacc_effective  26316 non-null  float64 - The person's opinion on H1N1 vaccination effectiveness
+ 
  16  opinion_h1n1_risk            26319 non-null  float64 - The person's opinion on H1N1 vaccionation risk
+ 
  17  opinion_h1n1_sick_from_vacc  26312 non-null  float64 - The person's opinion whether H1N1 vaccination causes sickness
+ 
  18  opinion_seas_vacc_effective  26245 non-null  float64 - The person's opinion seasonal flu vaccination effectiveness
+ 
  19  opinion_seas_risk            26193 non-null  float64 - The person's opinon on seasonal flu vaccination risk
+ 
  20  opinion_seas_sick_from_vacc  26170 non-null  float64 - The perosn's opinon whether seasonal vaccination causes sickness
+ 
  21  age_group                    26707 non-null  object - The age group at which they fall under
+ 
  22  education                    25300 non-null  object - The education which they have received
+ 
  23  race                         26707 non-null  object - A person's race
+ 
  24  sex                          26707 non-null  object - A person's sex 
+ 
  25  income_poverty               22284 non-null  object - A person's income level
+ 
  26  marital_status               25299 non-null  object - Whether a person is married or not
+ 
  27  rent_or_own                  24665 non-null  object - Whether a person rents or owns their property
+ 
  28  employment_status            25244 non-null  object - Whether a person is employed or not
+ 
  29  hhs_geo_region               26707 non-null  object - Unclear data due to no identifier [Dropped]
+ 
  30  census_msa                   26707 non-null  object  - Unclear data due to no identifier [Dropped]
+ 
  31  household_adults             26458 non-null  float64 - How many adults are in the household
+ 
  32  household_children           26458 non-null  float64 - How many children are in the household
+ 
  33  employment_industry          13377 non-null  object - Unclear data due to no identifier [Dropped]
+ 
  34  employment_occupation        13237 non-null  object - Unclear data due to no identifier [Dropped]
+ 
  35  h1n1_vaccine                 26707 non-null  int64 - Whether a person is H1N1 vaccinated or not
+ 
  36  seasonal_vaccine             26707 non-null  int64 - Whether a person is seasonal flu vaccinated or not
+ 
 
 
 ### Findings and Conclusion on the Models
 
 Pipeline Setup: This is to set up the data that will end up becoming essential to creating the models afterwards.
+
 Subpipe_Num = Num_Imputate/StandardScaler [Populates empty values for all columns with numbers and scales]
+
 Subpipe_Cat = Cat_Imputate/OneHotEncoder [Populates empty values for all columns with objects and then encodes it afterwards]
+
 CT = ColumTransformer to Combine the Two Subpipes into One
 
+
 The H1N1 Logistic Regression Model. [Smote performed worse so it will not be shown]
+
 The following were the gridsearches done to test different outcomes.
+
 params['ct__subpipe_num__num_impute__strategy'] = ['mean', 'median', 'most_frequent']
+
 params['logreg__penalty'] = ['none','l2', 'l1','elasticnet']
 params['logreg__solver'] = ['newton-cg','lbfgs','liblinear','sag','saga']
 params['logreg__C'] = [100, 10, 1.0, 0.1, 0.01]
