@@ -70,83 +70,83 @@ Subpipe_Num = Num_Imputate/StandardScaler [Populates empty values for all column
 Subpipe_Cat = Cat_Imputate/OneHotEncoder [Populates empty values for all columns with objects and then encodes it afterwards] <br />
 CT = ColumTransformer to Combine the Two Subpipes into One <br />
 
-The H1N1 Logistic Regression Model. [Smote performed worse so it will not be shown] <br />
-The following were the gridsearches done to test different outcomes. <br />
+   The H1N1 Logistic Regression Model. [Smote performed worse so it will not be shown] <br />
+   The following were the gridsearches done to test different outcomes. <br />
 params['ct__subpipe_num__num_impute__strategy'] = ['mean', 'median', 'most_frequent'] <br />
 params['logreg__penalty'] = ['none','l2', 'l1','elasticnet'] <br />
 params['logreg__solver'] = ['newton-cg','lbfgs','liblinear','sag','saga'] <br />
 params['logreg__C'] = [100, 10, 1.0, 0.1, 0.01] <br />
-The following was the best combination. <br />
+   The following was the best combination. <br />
 {'ct__subpipe_num__num_impute__strategy': 'most_frequent', 'logreg__C': 1.0, 'logreg__penalty': 'l1', 'logreg__solver': 'saga'} <br />
-The following is how the model performed.  <br />
+   The following is how the model performed.  <br />
 Our final model's accuracy on the test set is 0.83.  <br />
 Our final model's recall on the test set is 0.42  <br />
 Our final model's precision on the test set is 0.68  <br />
 Our final model's f1-score on the test is 0.52. <br />
 
-The H1N1 K-Nearest Neighbors Model. [Smote performed worse so it will not be shown] <br />
-The following were the gridsearches done to test different outcomes. <br />
+   The H1N1 K-Nearest Neighbors Model. [Smote performed worse so it will not be shown] <br />
+   The following were the gridsearches done to test different outcomes. <br />
 params['ct__subpipe_num__num_impute__strategy'] = ['mean', 'median', 'most_frequent'] <br />
 params['knn__n_neighbors'] = [1,3,5,7,9,11,13,15,17,19,21] <br />
 params['knn__weights'] = ['uniform','distance'] <br />
 params['knn__metric'] = ['euclidean', 'manhattan', 'minkowski'] <br />
-The following was the best combination. <br />
+   The following was the best combination. <br />
 {'ct__subpipe_num__num_impute__strategy': 'median', 'knn__metric': 'euclidean', 'knn__n_neighbors': 21, 'knn__weights': 'distance'} <br />
-The following is how the model performed.  <br />
+   The following is how the model performed.  <br />
 Our final model's accuracy on the test set is 0.82.  <br />
 Our final model's recall on the test set is 0.29  <br />
 Our final model's precision on the test set is 0.67  <br />
 Our final model's f1-score on the test is 0.41. <br />
 
-The H1N1 Random Forest Classfier Model. [Smote performed worse so it will not be shown] <br />
-The following were the gridsearches done to test different outcomes. <br />
+   The H1N1 Random Forest Classfier Model. [Smote performed worse so it will not be shown] <br />
+   The following were the gridsearches done to test different outcomes. <br />
 params['ct__subpipe_num__num_impute__strategy'] = ['mean', 'median', 'most_frequent'] <br />
 params['rfc__n_estimators'] = [10,100,1000] <br />
 params['rfc__max_features'] = [1,5,10,15,20,'sqrt','log2'] <br />
-The following was the best combination. <br />
+   The following was the best combination. <br />
 {'ct__subpipe_num__num_impute__strategy': 'median', 'rfc__max_features': 'sqrt', 'rfc__n_estimators': 1000} <br />
-The following is how the model performed.  <br />
+  The following is how the model performed.  <br />
 Our final model's accuracy on the test set is 0.83.  <br />
 Our final model's recall on the test set is 0.37  <br />
 Our final model's precision on the test set is 0.67  <br />
 Our final model's f1-score on the test is 0.48. <br />
 
-The Seasonal Flu Logistic Regression Model. <br />
-The following were the gridsearches done to test different outcomes. <br />
+   The Seasonal Flu Logistic Regression Model. <br />
+   The following were the gridsearches done to test different outcomes. <br />
 params['ct__subpipe_num__num_impute__strategy'] = ['mean', 'median', 'most_frequent'] <br />
 params['logreg2__penalty'] = ['none','l2', 'l1', 'elasticnet'] <br />
 params['logreg2__solver'] = ['newton-cg','lbfgs','liblinear','sag','saga'] <br />
 params['logreg2__C'] = [100, 10, 1.0, 0.1, 0.01] <br />
-The following was the best combination. <br />
+   The following was the best combination. <br />
 {'ct__subpipe_num__num_impute__strategy': 'most_frequent', 'logreg2__C': 0.1, 'logreg2__penalty': 'l1', 'logreg2__solver': 'liblinear'} <br />
-The following is how the model performed.  <br />
+   The following is how the model performed.  <br />
 Our final model's accuracy on the test set is 0.77.  <br />
 Our final model's recall on the test set is 0.73  <br />
 Our final model's precision on the test set is 0.77  <br />
 Our final model's f1-score on the test is 0.75. <br />
 
-The Seasonal Flu K-Nearest Neighbors Model. <br />
-The following were the gridsearches done to test different outcomes. <br />
+   The Seasonal Flu K-Nearest Neighbors Model. <br />
+   The following were the gridsearches done to test different outcomes. <br />
 params['ct__subpipe_num__num_impute__strategy'] = ['mean', 'median', 'most_frequent'] <br />
 params['knn__n_neighbors'] = [1,3,5,7,9,11,13,15,17,19,21] <br />
 params['knn__weights'] = ['uniform','distance'] <br />
 params['knn__metric'] = ['euclidean', 'manhattan', 'minkowski'] <br />
-The following was the best combination. <br />
+   The following was the best combination. <br />
 {'ct__subpipe_num__num_impute__strategy': 'median', 'knn__metric': 'manhattan', 'knn__n_neighbors': 21, 'knn__weights': 'distance'} <br />
-The following is how the model performed.  <br />
+   The following is how the model performed.  <br />
 Our final model's accuracy on the test set is 0.75.  <br />
 Our final model's recall on the test set is 0.72  <br />
 Our final model's precision on the test set is 0.73  <br />
 Our final model's f1-score on the test is 0.73. <br />
 
-The Seasonal Flu Random Forest Classifier. <br />
-The following were the gridsearches done to test different outcomes. <br />
+   The Seasonal Flu Random Forest Classifier. <br />
+   The following were the gridsearches done to test different outcomes. <br />
 params['ct__subpipe_num__num_impute__strategy'] = ['mean', 'median', 'most_frequent'] <br />
 params['rfc__n_estimators'] = [10,100,1000] <br />
 params['rfc__max_features'] = [1,5,10,15,20,'sqrt','log2'] <br />
-The following was the best combination. <br />
+   The following was the best combination. <br />
 {'ct__subpipe_num__num_impute__strategy': 'most_frequent', 'rfc__max_features': 'log2', 'rfc__n_estimators': 1000} <br />
-The following is how the model performed.  <br />
+   The following is how the model performed.  <br />
 Our final model's accuracy on the test set is 0.77.  <br />
 Our final model's recall on the test set is 0.73  <br />
 Our final model's precision on the test set is 0.76  <br />
