@@ -1,10 +1,10 @@
-# Flatiron Phase 3 Project
+# H1N1/Seasonal Flu Vaccination Predictor - Logistic Regression
 Charles Pan
 
 
 ## Project Overview
 
-In this project we have been tasked to analyze a data set and come up with our own business problem. The data set I have chosen to tackle was the Seasonal/H1N1 Flu dataset. The business problem I have come up with was to create a predictive model to tell whether a person who has filled out a questionnaire has H1N1 Flu Vaccination or the Seasonal Flu Vaccination. Since the purpose of the project was to use a predictive model over an inferential one, the scenario was that we would be collecting questionnaires and soliciting to those who have filled out the questionnaire and are not predicted to have been vaccinated.
+In this project I have been tasked to analyze a data set and come up with our own business problem. The data set I have chosen to tackle was the Seasonal/H1N1 Flu dataset. The business problem I have come up with was to create a predictive model to tell whether a person who has filled out a questionnaire has H1N1 Flu Vaccination or the Seasonal Flu Vaccination. Since the purpose of the project was to use a predictive model over an inferential one, the scenario was that we would be collecting questionnaires and soliciting to those who have filled out the questionnaire and are not predicted to have been vaccinated.
 
 
 ### Approach
